@@ -1,0 +1,21 @@
+{% extends 'base.html%}
+
+{% load static %}
+<div class="container mt-5">
+    <div class="row">
+        <h5 class="text-center">Name of the Customer:{{u}}</h5>
+
+        <div class="col-4 mt-3"><img src="{{i.product.image.url}}" height="150px" width="150px"></div>
+        <div class="col-4 mt-3">
+            <b>Productname:{{i.product.name}}</b>
+            <h6>Price:{{i.product.price}}</h6>
+            <h6>Quantity:{{i.product.no_of_items}}</h6>
+            <h6>Address:{{i.product.address}}</h6>
+            <h6>Phone:{{i.phone}}</h6>
+            <h6 class="text-light fst-italic">Ordered_on:{{i.ordered_date}}</h6>
+            <h6 class="text-light fst-italic">Delivery_status:{{i.delivery_status}}</h6>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

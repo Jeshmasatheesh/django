@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <div class="cointainer-fluid mt-1" style="margin-bottom:100px">
+          <img src="{% static 'images/bgpic1.jpg' %}" height="1000px" width="100%">
+ </div>
+<div class="container-fluid" style="margin-bottom: 100px">
+     <h3 class="text-center fn-bold">Our Collections</h3>
+     <p style="text-align:justify;line-heigth:2">
+Industry-leading speed
+Our powerful, performance-first infrastructure ensures fast page loading to deliver an enhanced online shopping experience for your customers. Discover more about our peak performance.
+"As an entrepreneur, it's really crucial to be able to build a brand that can scale worldwide. We're happy to have Wix alongside us as we scale into a larger business and do it smoothly."
+</p>
+</div>
+
+<div class="container-fluid" style="margin-bottom:100px">
+            <div class="row">
+                {% for i in c %}
+                    <div class="col-sm-4">
+                                <div class="card" style="width:20rem ;">
+                                <img src="{{i.image.url}}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                                <h5 class="card-title">{{i.name}}</h5>
+                                                <p class="card-text">{{i.desc}}</p>
+                                            <a href="{% url 'shop:products' i.id %}" style="position:relative;left:15%;width:200px;" class="btn btn-secondary">Products</a>
+
+                                        </div>
+                                </div>
+
+
+                    </div>
+
+                {% endfor %}
+            </div>
+</div>
+
+
+
+<div class="container-fluid style= margin-bottom:100px">
+<div class="row">
+    <div class="col-sm-4">
+</div>
+{% endblock %}
+
